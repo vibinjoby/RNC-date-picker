@@ -1,9 +1,5 @@
-import { NativeModules } from 'react-native';
+import { requireNativeComponent } from 'react-native';
 
-type DtPickerType = {
-  multiply(a: number, b: number): Promise<number>;
-};
+const DtPicker = requireNativeComponent('DtPickerView');
 
-const { DtPicker } = NativeModules;
-
-export default DtPicker as DtPickerType;
+export default DtPicker;
