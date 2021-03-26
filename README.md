@@ -1,6 +1,6 @@
 # react-native-dt-picker
 
-custom react native date picker
+This date picker lets you exclude certain days in a week
 
 ## Installation
 
@@ -11,11 +11,21 @@ npm install react-native-dt-picker
 ## Usage
 
 ```js
-import DtPicker from "react-native-dt-picker";
+import DtPicker from 'react-native-dt-picker';
 
 // ...
 
-const result = await DtPicker.multiply(3, 7);
+<DtPicker
+  hint="select a date"
+  dateFormat="MM/dd/yyyy"
+  restrictedDays={[1, 2, 7]}
+  onDateChanged={(e) => console.log('on change', e.nativeEvent.text)}
+  style={{
+    height: 30,
+    backgroundColor: 'white',
+    width: 100,
+  }}
+/>;
 ```
 
 ## Contributing
